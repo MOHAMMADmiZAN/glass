@@ -9,13 +9,13 @@
 
 .cardImageContent {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 20px;
 }
 
 .card {
     border: none;
-    border-radius: 10px;
+
 
 }
 
