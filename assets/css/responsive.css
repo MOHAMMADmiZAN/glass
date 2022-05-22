@@ -1,6 +1,9 @@
 
  /*responsive style for extra small devices (phones, 575px and down) *!*/
 @media (min-width: 320px) and (max-width: 575px){
+    .cardImageContent .glass{
+        width: -webkit-fill-available
+    }
 
 .try{
     margin: 0 auto;
