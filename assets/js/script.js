@@ -1,6 +1,13 @@
 const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
-let model;
+// import * as faceDetection from '@tensorflow-models/face-detection';
+// import '@tensorflow/tfjs-backend-webgl';
+// const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
+// const detectorConfig = {
+//     runtime: 'mediapipe', // or 'tfjs'
+// }
+// const detector = await faceDetection.createDetector(model, detectorConfig);
+// console.log(detector);
 
 
 actionBtn.addEventListener('click', (e) => {
@@ -43,6 +50,7 @@ actionBtn.addEventListener('click', (e) => {
                         video.srcObject = stream;
                         video.play();
                         resolve(video);
+                        console.log(detector)
                     })
                     .catch(err => {
                         reject(err);
