@@ -1,6 +1,7 @@
 const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
 
+
 actionBtn.addEventListener('click', (e) => {
     e.preventDefault()
     imgContent.classList.add('loadingContent');
@@ -14,4 +15,41 @@ actionBtn.addEventListener('click', (e) => {
                                     <img src="/assets/svg/circle.svg" alt="circle.svg">
                                 </div>
     `
+    // select camera button
+    const cameraBtn = document.querySelector('.i-1');
+    // camera button click event
+    cameraBtn.addEventListener('click', () => {
+        //
+        imgContent.classList.remove('loadingContent');
+        imgContent.innerHTML = `
+        <video id="video" style="width: 100%; height: 431px; "></video>
+        `
+
+        // create setup camera function
+        function setupCamera() {
+            return new Promise((resolve, reject) => {
+                // get video input
+                const video = document.querySelector('#video');
+                //  video input width and height
+                let width = video.offsetWidth;
+                let height = video.offsetHeight;
+                // stream video
+                navigator.mediaDevices.getUserMedia({video: {width, height}, audio: false})
+                    .then(stream => {
+                        video.srcObject = stream;
+                        video.play();
+                        console.dir();
+                        resolve();
+                    })
+                    .catch(err => {
+                        reject(err);
+                    });
+            });
+        }
+         // setup camera function call
+        setupCamera()
+    })
 })
+
+
+
