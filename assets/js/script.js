@@ -38,7 +38,6 @@ actionBtn.addEventListener('click', (e) => {
                     .then(stream => {
                         video.srcObject = stream;
                         video.play();
-                        console.dir();
                         resolve();
                     })
                     .catch(err => {
@@ -46,8 +45,14 @@ actionBtn.addEventListener('click', (e) => {
                     });
             });
         }
-         // setup camera function call
-        setupCamera()
+
+        // setup camera function call
+        setupCamera().then(() => {
+            console.log('camera is ready');
+
+        }).catch(err => {
+            console.error(err);
+        })
     })
 })
 
