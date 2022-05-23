@@ -45,6 +45,7 @@ actionBtn.addEventListener('click', (e) => {
             //
             // })
 
+            // for single face detection landmarks
 
 
             if (results.multiFaceLandmarks) {
