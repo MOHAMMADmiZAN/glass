@@ -19,6 +19,18 @@
 
 }
 
+#canvas {
+    width: 100%;
+    height: 431px;
+
+}
+
+#video {
+    width: 100%;
+    height: 431px;
+    display: none;
+}
+
 .contentIcon {
     top: 0;
     left: 0;
@@ -58,7 +70,8 @@
 
 
 }
-.try span{
+
+.try span {
     border-radius: 5px;
     font-weight: 500;
     font-size: 25px;
@@ -66,20 +79,23 @@
     line-height: 60px;
     margin-right: 56px;
 }
-.loadingContent{
+
+.loadingContent {
     width: 100%;
-    height: 431px!important;
+    height: 431px !important;
     background: #191919;
     position: relative;
 
 }
-.loadImg{
-   position: absolute;
+
+.loadImg {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.loadIcon{
+
+.loadIcon {
     top: 350px;
 
     width: 50px;
@@ -89,11 +105,13 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.i-2{
+
+.i-2 {
     right: 0;
 
 }
-.i-1{
+
+.i-1 {
     left: 0;
 }
 

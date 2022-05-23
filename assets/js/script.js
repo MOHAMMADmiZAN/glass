@@ -1,5 +1,6 @@
 const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
+
 actionBtn.addEventListener('click', (e) => {
     e.preventDefault()
     imgContent.classList.add('loadingContent');
@@ -20,8 +21,8 @@ actionBtn.addEventListener('click', (e) => {
         //
         imgContent.classList.remove('loadingContent');
         imgContent.innerHTML = `
-        <video id="video" style="width: 600px; height: 431px; display: none"></video>
-        <canvas id="canvas" style="width: 600px; height: 431px;"></canvas>
+        <video id="video"></video>
+        <canvas id="canvas"></canvas>
         `
 
         const videoElement = document.getElementById('video');
@@ -36,13 +37,15 @@ actionBtn.addEventListener('click', (e) => {
                 results.image, 0, 0, canvasElement.width, canvasElement.height);
 
             // for separate face detection landmarks
-            results.multiFaceLandmarks.forEach(function (landmarks) {
-                landmarks.forEach(function (point) {
-                    console.log(`x:${point.x}, y:${point.y} z:${point.z}`);
+            // results.multiFaceLandmarks.forEach(function (landmarks) {
+            //     landmarks.forEach(function (point) {
+            //         console.log(`x:${point.x}, y:${point.y} z:${point.z}`);
+            //
+            //     })
+            //
+            // })
 
-                })
 
-            })
 
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {
@@ -51,7 +54,9 @@ actionBtn.addEventListener('click', (e) => {
                     drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
                     drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
 
+
                 }
+
             }
             canvasCtx.restore();
         }
@@ -73,8 +78,8 @@ actionBtn.addEventListener('click', (e) => {
             onFrame: async () => {
                 await faceMesh.send({image: videoElement});
             },
-            width: 600,
-            height: 431
+            width: videoElement.offsetWidth,
+            height: videoElement.offsetHeight
         });
         camera.start();
 

@@ -2,41 +2,55 @@
  /*responsive style for extra small devices (phones, 575px and down) *!*/
 @media (min-width: 320px) and (max-width: 575px){
     .cardImageContent .glass{
-        width: -webkit-fill-available
+        width: 100%;
     }
 
 .try{
     margin: 0 auto;
+}
+#canvas{
+    width: 100%;
+
 }
 
 }
 
  @media (min-width: 576px) and (max-width: 767px){
      .cardImageContent .glass{
-         width: -webkit-fill-available
+         width: 100%;
      }
      .try{
          margin: 0 auto;
+
+     }
+     #canvas{
+         width: 100%;
 
      }
  }
  /*//responsive style for medium devices (tablets, 768px and up)*/
  @media (min-width: 768px) and (max-width: 991px){
         .cardImageContent .glass{
-            width: -webkit-fill-available
+            width: 100%
         }
      .try{
          margin: 0 auto;
 
      }
+     #canvas{
+         width: 100%
+     }
  }
  /*//responsive style for large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199px){
        .cardImageContent .glass{
-           width: -webkit-fill-available
+           width: 100%
        }
     .try{
         margin: 0 auto;
 
+    }
+    #canvas{
+        width: 100%
     }
 }
