@@ -1,6 +1,6 @@
 const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
-let model;
+// let model;
 // import * as faceDetection from '@tensorflow-models/face-detection';
 // import '@tensorflow/tfjs-backend-webgl';
 // const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
@@ -31,13 +31,13 @@ actionBtn.addEventListener('click', (e) => {
         //
         imgContent.classList.remove('loadingContent');
         imgContent.innerHTML = `
-        <video id="video" style="width: 600px; height: 431px;"></video>
+        <video id="video" style="width: 600px; height: 431px; display: none"></video>
         <canvas id="canvas" style="width: 600px; height: 431px;"></canvas>
         `
 
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
+        const videoElement = document.getElementById('video');
+        const canvasElement = document.getElementById('canvas');
+        const canvasCtx = canvasElement.getContext('2d');
 
         // const detectFace = async () => {
         //     let predictions = await model.estimateFaces(video, false)
@@ -69,45 +69,45 @@ actionBtn.addEventListener('click', (e) => {
         //
         // }
 
-        function onResults(results) {
-            // Draw the overlays.
-            ctx.save();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(
-                results.image, 0, 0, canvas.width, canvas.height);
-            if (results.detections.length > 0) {
-                drawingUtils.drawRectangle(
-                    ctx, results.detections[0].boundingBox,
-                    {color: 'blue', lineWidth: 4, fillColor: '#00000000'});
-                drawingUtils.drawLandmarks(ctx, results.detections[0].landmarks, {
-                    color: 'red',
-                    radius: 5,
-                });
-            }
-            ctx.restore();
-        }
-
-        let url = 'https://cdn.jsdelivr.net/npm/@mediapipe/face_detection'
-        const faceDetection = new FaceDetection({
-            locateFile: (file) => {
-                return `${url}/${file}`;
-            }
-        });
-        faceDetection.setOptions({
-            modelSelection: 0,
-            minDetectionConfidence: 0.5
-        });
-        faceDetection.onResults(onResults);
-
-        const camera = new Camera(video, {
-            onFrame: async () => {
-                // model = await blazeface.load()
-                // await detectFace()
-                await faceDetection.send({image: video});
-
-            }, width: 600, height: 431,
-        });
-        camera.start();
+        // function onResults(results) {
+        //     // Draw the overlays.
+        //     ctx.save();
+        //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //     ctx.drawImage(
+        //         results.image, 0, 0, canvas.width, canvas.height);
+        //     if (results.detections.length > 0) {
+        //         drawingUtils.drawRectangle(
+        //             ctx, results.detections[0].boundingBox,
+        //             {color: 'blue', lineWidth: 4, fillColor: '#00000000'});
+        //         drawingUtils.drawLandmarks(ctx, results.detections[0].landmarks, {
+        //             color: 'red',
+        //             radius: 5,
+        //         });
+        //     }
+        //     ctx.restore();
+        // }
+        //
+        // let url = 'https://cdn.jsdelivr.net/npm/@mediapipe/face_detection@0.4'
+        // const faceDetection = new FaceDetection({
+        //     locateFile: (file) => {
+        //         return `${url}/${file}`;
+        //     }
+        // });
+        // faceDetection.setOptions({
+        //     modelSelection: 0,
+        //     minDetectionConfidence: 0.5
+        // });
+        // faceDetection.onResults(onResults);
+        //
+        // const camera = new Camera(video, {
+        //     onFrame: async () => {
+        //         // model = await blazeface.load()
+        //         // await detectFace()
+        //         await faceDetection.send({image: video});
+        //
+        //     }, width: 600, height: 431,
+        // });
+        // camera.start();
 
 
         //
@@ -202,6 +202,44 @@ actionBtn.addEventListener('click', (e) => {
         // }).catch(err => {
         //     console.error(err);
         // })
+        function onResults(results) {
+            canvasCtx.save();
+            canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+            canvasCtx.drawImage(
+                results.image, 0, 0, canvasElement.width, canvasElement.height);
+            if (results.multiFaceLandmarks) {
+                for (const landmarks of results.multiFaceLandmarks) {
+                    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
+                    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_IRIS, {color: '#FF3030'});
+                    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
+                    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
+
+                }
+            }
+            canvasCtx.restore();
+        }
+
+        const faceMesh = new FaceMesh({
+            locateFile: (file) => {
+                return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
+            }
+        });
+        faceMesh.setOptions({
+            maxNumFaces: 1,
+            refineLandmarks: true,
+            minDetectionConfidence: 0.5,
+            minTrackingConfidence: 0.5
+        });
+        faceMesh.onResults(onResults);
+
+        const camera = new Camera(videoElement, {
+            onFrame: async () => {
+                await faceMesh.send({image: videoElement});
+            },
+            width: 600,
+            height: 431
+        });
+        camera.start();
 
 
     })
