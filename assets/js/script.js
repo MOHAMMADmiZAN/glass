@@ -207,6 +207,16 @@ actionBtn.addEventListener('click', (e) => {
             canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
             canvasCtx.drawImage(
                 results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+            // for separate face detection landmarks
+            results.multiFaceLandmarks.forEach(function (landmarks) {
+                landmarks.forEach(function (point) {
+                    console.log(`x:${point.x}, y:${point.y} z:${point.z}`);
+
+                })
+
+            })
+
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {
                     drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
