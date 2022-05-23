@@ -11,5 +11,9 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="@tensorflow" level="application" />
     <orderEntry type="library" name="@tensorflow-models" level="application" />
+    <orderEntry type="library" name="@mediapipe/camera_utils" level="application" />
+    <orderEntry type="library" name="@mediapipe/control_utils" level="application" />
+    <orderEntry type="library" name="@mediapipe/drawing_utils" level="application" />
+    <orderEntry type="library" name="@mediapipe/face_detection" level="application" />
   </component>
 </module>
