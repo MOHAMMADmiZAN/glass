@@ -1,6 +1,9 @@
 const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
 
+
+
+
 actionBtn.addEventListener('click', (e) => {
     e.preventDefault()
     imgContent.classList.add('loadingContent');
@@ -47,12 +50,15 @@ actionBtn.addEventListener('click', (e) => {
 
             // for single face detection landmarks
 
+            console.log(`right EYE_irish:   ${FACEMESH_RIGHT_IRIS}`)
+            console.log(`left EYE_irish:   ${FACEMESH_LEFT_IRIS}`)
 
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {
-                    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
+
+                    // drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
                     drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_IRIS, {color: '#FF3030'});
-                    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
+                    // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
                     drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
 
 
