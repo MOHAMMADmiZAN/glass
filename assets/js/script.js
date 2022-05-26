@@ -40,18 +40,22 @@ actionBtn.addEventListener('click', (e) => {
                 results.image, 0, 0, canvasElement.width, canvasElement.height);
 
             // for separate face detection landmarks
-            // results.multiFaceLandmarks.forEach(function (landmarks) {
-            //     landmarks.forEach(function (point) {
-            //         console.log(`x:${point.x}, y:${point.y} z:${point.z}`);
-            //
-            //     })
-            //
-            // })
+            results.multiFaceLandmarks.forEach(function (landmarks) {
+
+
+                console.log(  landmarks[468].x)
+                console.log(landmarks[468].y)
+                console.log( landmarks[468].z)
+                console.log(landmarks[473].x)
+                console.log(landmarks[473].y)
+                console.log(landmarks[473].z)
+
+            })
 
             // for single face detection landmarks
 
-            console.log(`right EYE_irish:   ${FACEMESH_RIGHT_IRIS}`)
-            console.log(`left EYE_irish:   ${FACEMESH_LEFT_IRIS}`)
+
+
 
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {

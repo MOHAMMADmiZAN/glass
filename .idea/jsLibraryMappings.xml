@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@mediapipe/camera_utils, @mediapipe/control_utils, @mediapipe/drawing_utils, @mediapipe/face_detection, @mediapipe/face_mesh, @tensorflow, @tensorflow-models, bootstrap}" />
+    <file url="PROJECT" libraries="{@mediapipe/camera_utils, @mediapipe/control_utils, @mediapipe/control_utils_3d, @mediapipe/drawing_utils, @mediapipe/face_detection, @mediapipe/face_mesh, @mediapipe/pose, @tensorflow, @tensorflow-models, bootstrap}" />
   </component>
 </project>

@@ -16,5 +16,7 @@
     <orderEntry type="library" name="@mediapipe/drawing_utils" level="application" />
     <orderEntry type="library" name="@mediapipe/face_detection" level="application" />
     <orderEntry type="library" name="@mediapipe/face_mesh" level="application" />
+    <orderEntry type="library" name="@mediapipe/control_utils_3d" level="application" />
+    <orderEntry type="library" name="@mediapipe/pose" level="application" />
   </component>
 </module>
