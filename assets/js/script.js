@@ -39,16 +39,19 @@ actionBtn.addEventListener('click', (e) => {
             canvasCtx.drawImage(
                 results.image, 0, 0, canvasElement.width, canvasElement.height);
 
+
+            console.log(`right iris ${FACEMESH_RIGHT_IRIS}`)
+            console.log(`left iris ${FACEMESH_LEFT_IRIS}`)
             // for separate face detection landmarks
             results.multiFaceLandmarks.forEach(function (landmarks) {
 
 
-                console.log(  landmarks[468].x)
-                console.log(landmarks[468].y)
-                console.log( landmarks[468].z)
-                console.log(landmarks[473].x)
-                console.log(landmarks[473].y)
-                console.log(landmarks[473].z)
+                console.log(  `right x ${landmarks[469].x}`)
+                console.log(`right y ${landmarks[469].y}`)
+                console.log( `right y ${landmarks[469].z}`)
+                console.log(`left x ${landmarks[474].x}`)
+                console.log(`left y ${landmarks[474].y}`)
+                console.log(`left z ${landmarks[474].z}`)
 
             })
 
