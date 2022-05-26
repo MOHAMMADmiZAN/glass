@@ -62,17 +62,16 @@ actionBtn.addEventListener('click', (e) => {
             })
 
             // for single face detection landmarks
-            console.log(FACEMESH_RIGHT_IRIS)
+
 
 
 
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {
 
-                    // drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
+
                     drawConnectors(canvasCtx, landmarks,[[469,470],[470,471]], {color: '#FF3030'});
-                    // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
-                    // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
+
 
 
                 }
