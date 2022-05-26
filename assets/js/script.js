@@ -40,8 +40,12 @@ actionBtn.addEventListener('click', (e) => {
                 results.image, 0, 0, canvasElement.width, canvasElement.height);
 
 
-            console.log(`right iris ${FACEMESH_RIGHT_IRIS}`)
-            console.log(`left iris ${FACEMESH_LEFT_IRIS}`)
+            // console.log(`right iris ${FACEMESH_RIGHT_IRIS}`)
+            // console.log(`left iris ${FACEMESH_LEFT_IRIS}`)
+            console.log(typeof FACEMESH_RIGHT_IRIS)
+            for (let i in FACEMESH_RIGHT_IRIS) {
+                console.log(FACEMESH_RIGHT_IRIS[i])
+            }
             // for separate face detection landmarks
             results.multiFaceLandmarks.forEach(function (landmarks) {
 
@@ -53,10 +57,12 @@ actionBtn.addEventListener('click', (e) => {
                 console.log(`left y ${landmarks[474].y}`)
                 console.log(`left z ${landmarks[474].z}`)
 
+
+
             })
 
             // for single face detection landmarks
-
+            console.log(FACEMESH_RIGHT_IRIS)
 
 
 
@@ -64,9 +70,9 @@ actionBtn.addEventListener('click', (e) => {
                 for (const landmarks of results.multiFaceLandmarks) {
 
                     // drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_EYE, {color: '#FF3030'});
-                    drawConnectors(canvasCtx, landmarks, FACEMESH_RIGHT_IRIS, {color: '#FF3030'});
+                    drawConnectors(canvasCtx, landmarks,[[469,470],[470,471]], {color: '#FF3030'});
                     // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_EYE, {color: '#FF3030'});
-                    drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
+                    // drawConnectors(canvasCtx, landmarks, FACEMESH_LEFT_IRIS, {color: '#FF3030'});
 
 
                 }
