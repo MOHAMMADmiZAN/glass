@@ -48,7 +48,7 @@ actionBtn.addEventListener('click', (e) => {
 
                 console.log(  `right x ${landmarks[469].x}`)
                 console.log(`right y ${landmarks[469].y}`)
-                console.log( `right y ${landmarks[469].z}`)
+                console.log( `right z ${landmarks[469].z}`)
                 console.log(`left x ${landmarks[474].x}`)
                 console.log(`left y ${landmarks[474].y}`)
                 console.log(`left z ${landmarks[474].z}`)
