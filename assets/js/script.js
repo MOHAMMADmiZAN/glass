@@ -1,5 +1,5 @@
 const imgContent = document.querySelector('.cardImageContent');
-export const actionBtn = document.querySelector('.try');
+ const actionBtn = document.querySelector('.try');
 
 
 actionBtn.addEventListener('click', () => {
