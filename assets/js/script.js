@@ -2,21 +2,36 @@ const imgContent = document.querySelector('.cardImageContent');
 const actionBtn = document.querySelector('.try');
 
 
-
-
 actionBtn.addEventListener('click', (e) => {
     e.preventDefault()
     imgContent.classList.add('loadingContent');
     imgContent.innerHTML = `
-    <img src="/assets/svg/Graphics-Check-big.svg" alt="Graphics-Check-big.svg" class="loadImg">
-                            <div class="loadIcons position-relative">
-                                <div class="loadIcon position-absolute i-1">
-                                    <img src="/assets/svg/Button%20Camera.svg" alt="Button%20Camera.svg">
-                                </div>
-                                <div class="loadIcon i-2 position-absolute">
-                                    <img src="/assets/svg/circle.svg" alt="circle.svg">
-                                </div>
+     <iframe src="./index2.html" style="width: 100%; height: 100%;"></iframe>
+    <div className = "loadIcons position-relative" >
+        <divclassName = "loadIcon position-absolute i-1" >
+        <img src = "/assets/svg/Button%20Camera.svg" alt = "Button%20Camera.svg" >
+       </div>
+    <div className="loadIcon i-2 position-absolute">
+        <img src="/assets/svg/circle.svg" alt="circle.svg">
+    </div>
+    
     `
+
+    //     < img
+    // src = "/assets/svg/Graphics-Check-big.svg"
+    // alt = "Graphics-Check-big.svg"
+    // className = "loadImg" >
+    //     < div
+    // className = "loadIcons position-relative" >
+    //     < div
+    // className = "loadIcon position-absolute i-1" >
+    //     < img
+    // src = "/assets/svg/Button%20Camera.svg"
+    // alt = "Button%20Camera.svg" >
+    //     < /div>
+    // <div className="loadIcon i-2 position-absolute">
+    //     <img src="/assets/svg/circle.svg" alt="circle.svg">
+    // </div>
     // select camera button
     const cameraBtn = document.querySelector('.i-1');
     // camera button click event
@@ -50,13 +65,12 @@ actionBtn.addEventListener('click', (e) => {
             results.multiFaceLandmarks.forEach(function (landmarks) {
 
 
-                console.log(  `right x ${landmarks[469].x}`)
+                console.log(`right x ${landmarks[469].x}`)
                 console.log(`right y ${landmarks[469].y}`)
-                console.log( `right z ${landmarks[469].z}`)
+                console.log(`right z ${landmarks[469].z}`)
                 console.log(`left x ${landmarks[474].x}`)
                 console.log(`left y ${landmarks[474].y}`)
                 console.log(`left z ${landmarks[474].z}`)
-
 
 
             })
@@ -64,14 +78,11 @@ actionBtn.addEventListener('click', (e) => {
             // for single face detection landmarks
 
 
-
-
             if (results.multiFaceLandmarks) {
                 for (const landmarks of results.multiFaceLandmarks) {
 
 
-                    drawConnectors(canvasCtx, landmarks,[[469,470],[470,471]], {color: '#FF3030'});
-
+                    drawConnectors(canvasCtx, landmarks, [[469, 470], [470, 471]], {color: '#FF3030'});
 
 
                 }
