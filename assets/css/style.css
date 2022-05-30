@@ -99,9 +99,11 @@
     top: 330px;
     width: 50px;
     height: 50px;
-    line-height: 40px;
+    text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    background: gray;
+    position: relative;
 }
 
 .i-2 {
@@ -114,5 +116,13 @@
 .i-1 {
     left: 10px;
     z-index: 111;
+}
+.loadIcon img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
