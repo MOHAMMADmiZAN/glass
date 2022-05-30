@@ -108,10 +108,10 @@
 <div class='content position-relative'>
     <div class="loadIcons position-relative">
         <div class="loadIcon position-absolute i-1">
-            <img src="/assets/images/Group%20904.png" alt="Button%20Camera.svg">
+            <img src="/assets/svg/Button%20Camera.svg" alt="Button%20Camera.svg">
         </div>
         <div class="loadIcon i-2 position-absolute">
-            <img src="/assets/images/565249.png" alt="circle.svg" style="width: 100% ;height: 100%;">
+            <img src="/assets/svg/circle.svg" alt="circle.svg" style="width: 100% ;height: 100%;">
         </div>
     </div>
 
@@ -179,15 +179,20 @@
     </div>
 </div>
 <script>
-
+    const cameraBtn = document.querySelector('.i-1');
+    const refresh = document.querySelector('.i-2');
     const canvas = document.getElementById('JeelizVTOWidgetCanvas');
 
-    const refresh = document.querySelector('.i-2');
+    if (window.outerWidth > 419) {
+        console.log(cameraBtn.children[0].src = 'assets/images/ButtonCamera.png');
+        console.log(refresh.children[0].src = 'assets/images/565249.png');
+    }
+
 
     refresh.addEventListener('click', function () {
         window.location.reload();
     });
-    const cameraBtn = document.querySelector('.i-1');
+
     cameraBtn.addEventListener('click', function (e) {
         e.preventDefault()
         let img = document.createElement('a')

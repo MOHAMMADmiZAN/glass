@@ -105,14 +105,14 @@
 }
 
 .i-2 {
-    right: 0;
+    right: 10px;
     z-index: 111;
 
 }
 
 
 .i-1 {
-    left: 0;
+    left: 10px;
     z-index: 111;
 }
 
