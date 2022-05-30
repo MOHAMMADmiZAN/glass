@@ -26,21 +26,10 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
-    <script src="/assets/js/script.js"></script>
+    <script type="module" src="/assets/js/script.js"></script>
 
 
     <script>
-        let _isResized = false;
-
-        function test_resizeCanvas() {
-            // halves the height:
-            let halfHeightPx = Math.round(window.innerHeight / 2).toString() + 'px';
-
-            const domWidget = document.getElementById('JeelizVTOWidget');
-            domWidget.style.maxHeight = (_isResized) ? 'none' : halfHeightPx;
-
-            _isResized = !_isResized;
-        }
 
 
         function get_initialSKU() {
@@ -60,7 +49,7 @@
                 searchImageMask: 'https://appstatic.jeeliz.com/jeewidget/images/target.png',
                 searchImageColor: 0xeeeeee,
                 callbackReady: function () {
-                    console.log('INFO: JEELIZVTOWIDGET is ready :)');
+
 
                     // add a LUT to change video rendering:
                     //JEELIZVTOWIDGET.set_LUT('images/LUTs/LUTGrayscale.png');
@@ -122,7 +111,7 @@
             <img src="/assets/images/Group%20904.png" alt="Button%20Camera.svg">
         </div>
         <div class="loadIcon i-2 position-absolute">
-            <img src="/assets/images/565249.png" alt="circle.svg">
+            <img src="/assets/images/565249.png" alt="circle.svg" style="width: 100% ;height: 100%;">
         </div>
     </div>
 
@@ -149,7 +138,7 @@
          it should have CSS attribute position: absolute so that it can be resized without
          changing the total size of the placeholder
         -->
-        <canvas id='JeelizVTOWidgetCanvas'></canvas>
+        <canvas id='JeelizVTOWidgetCanvas' style="width: 100%;height: 100%;"></canvas>
 
         <div class='JeelizVTOWidgetControls JeelizVTOWidgetControlsTop'>
             <!-- ADJUST BUTTON: -->
@@ -192,14 +181,18 @@
 <script>
 
     const canvas = document.getElementById('JeelizVTOWidgetCanvas');
+
+    const refresh = document.querySelector('.i-2');
+
+    refresh.addEventListener('click', function () {
+        window.location.reload();
+    });
     const cameraBtn = document.querySelector('.i-1');
     cameraBtn.addEventListener('click', function (e) {
         e.preventDefault()
-        console.log('canvas clicked');
         let img = document.createElement('a')
         img.href = canvas.toDataURL('image/png')
         img.download = 'image.png'
-        console.log(img);
         img.click()
     });
 
