@@ -26,6 +26,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
+    <script src="/assets/js/script.js"></script>
 
 
     <script>
@@ -177,8 +178,23 @@
         </div>
         <!-- END LOADING -->
 
+
     </div>
 </div>
+<script>
+
+    const canvas = document.getElementById('JeelizVTOWidgetCanvas');
+    canvas.addEventListener('click', function (e) {
+        e.preventDefault()
+        console.log('canvas clicked');
+        let img = document.createElement('a')
+        img.href = canvas.toDataURL('image/png')
+        img.download = 'image.png'
+        console.log(img);
+        img.click()
+    });
+
+</script>
 </body>
 </html>
  

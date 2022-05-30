@@ -23,13 +23,7 @@ actionBtn.addEventListener('click', (e) => {
     // <div className="loadIcon i-2 position-absolute">
     //     <img src="/assets/svg/circle.svg" alt="circle.svg">
     // </div>
-    // select camera button
-    const cameraBtn = document.querySelector('.i-1');
-    // camera button click event
-    cameraBtn.addEventListener('click', () => {
-        //
 
-    })
 })
 
 
