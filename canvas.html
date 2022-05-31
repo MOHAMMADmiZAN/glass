@@ -136,25 +136,25 @@
         -->
         <canvas id='JeelizVTOWidgetCanvas'></canvas>
 
-        <!--        <div class='JeelizVTOWidgetControls JeelizVTOWidgetControlsTop'>-->
-        <!--            &lt;!&ndash; ADJUST BUTTON: &ndash;&gt;-->
-        <!--            &lt;!&ndash;          <button id='JeelizVTOWidgetAdjust'>&ndash;&gt;-->
-        <!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-arrows-alt"></i></div>Adjust&ndash;&gt;-->
-        <!--            &lt;!&ndash;          </button>&ndash;&gt;-->
+        <div class='JeelizVTOWidgetControls JeelizVTOWidgetControlsTop'>
+            <!-- ADJUST BUTTON: -->
+            <!--          <button id='JeelizVTOWidgetAdjust'>-->
+            <!--            <div class="buttonIcon"><i class="fas fa-arrows-alt"></i></div>Adjust-->
+            <!--          </button>-->
 
-        <!--            &lt;!&ndash; RESIZE WIDGET BUTTON: &ndash;&gt;-->
-        <!--            &lt;!&ndash;          <button id='buttonResizeCanvas' onclick='test_resizeCanvas();'>&ndash;&gt;-->
-        <!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-sync-alt"></i></div>Resize widget&ndash;&gt;-->
-        <!--            &lt;!&ndash;          </button>&ndash;&gt;-->
-        <!--        </div>-->
+            <!-- RESIZE WIDGET BUTTON: -->
+            <!--          <button id='buttonResizeCanvas' onclick='test_resizeCanvas();'>-->
+            <!--            <div class="buttonIcon"><i class="fas fa-sync-alt"></i></div>Resize widget-->
+            <!--          </button>-->
+        </div>
 
         <!-- CHANGE MODEL BUTTONS: -->
-        <!--        <div class='JeelizVTOWidgetControls' id='JeelizVTOWidgetChangeModelContainer'>-->
-        <!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_aviator_or_vertFlash')">Model 1</button>&ndash;&gt;-->
-        <!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_round_cuivre_pinkBrownDegrade')">Model 2</button>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')">Model 3</button>&ndash;&gt;-->
-        <!--            &lt;!&ndash;          <button onclick="load_modelBySKU()">by SKU</button>&ndash;&gt;-->
-        <!--        </div>-->
+        <div class='JeelizVTOWidgetControls' id='JeelizVTOWidgetChangeModelContainer'>
+            <button onclick="JEELIZVTOWIDGET.load('rayban_aviator_or_vertFlash')">Model 1</button>
+            <button onclick="JEELIZVTOWIDGET.load('rayban_round_cuivre_pinkBrownDegrade')">Model 2</button>
+            <button onclick="JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')">Model 3</button>
+            <!--          <button onclick="load_modelBySKU()">by SKU</button>-->
+        </div>
 
         <!-- BEGIN ADJUST NOTICE -->
         <!--        <div id='JeelizVTOWidgetAdjustNotice'>-->
@@ -166,6 +166,7 @@
         <!-- BEGIN LOADING WIDGET (not model) -->
         <div id='JeelizVTOWidgetLoading'>
             <div class="loadingContent">
+                <div class="loader"></div>
                 <img src="/assets/svg/Graphics-Check-big.svg" alt="Graphics-Check-big.svg" class="loadImg">
             </div>
         </div>
