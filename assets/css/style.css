@@ -94,7 +94,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 1px solid blue;
+    border: 5px solid #03a1fc;
 
 }
 
