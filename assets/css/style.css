@@ -94,19 +94,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    animation: loader 2s linear  infinite alternate;
-    
-}
-@keyframes loader {
-    0% {
-        background: dodgerblue;
-        transform: scale(0.1) translate(-50%, -50%);
+    border: 1px solid blue;
 
-    }
-    100% {
-        background: #ffffff;
-        transform: scale(1) translate(-50%, -50%);
-    }
 }
 
 
