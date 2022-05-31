@@ -102,26 +102,24 @@
 .loader {
 
     border-radius: 50%;
-    border-top: 5px solid #03a1fc;
-    width: 185px;
-    height: 185px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+    /*border-top: 5px solid #03a1fc;*/
+    width: 201px;
+    height: 201px;
+    animation: spin 1s linear infinite;
     position: absolute;
-    top: 26%;
-    left: 41%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
 }
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { border-right: 5px solid #03a1fc }
+    25%{border-bottom: 5px solid #03a1fc}
+    50%{border-left: 5px solid #03a1fc}
+    100% { border-top: 5px solid #03a1fc }
 }
 /* Safari */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
+
 
 
 

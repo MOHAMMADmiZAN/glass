@@ -46,10 +46,14 @@
         function main() {
             JEELIZVTOWIDGET.start({
                 sku: get_initialSKU(),
-                searchImageMask: '/assets/svg/Graphics-Check-big.svg',
-                searchImageColor: '#ffffff',
+                searchImageMask: 'https://appstatic.jeeliz.com/jeewidget/images/target.png',
+                searchImageColor: 0xeeeeee,
                 callbackReady: function () {
-                    JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')
+
+
+                    // add a LUT to change video rendering:
+                    //JEELIZVTOWIDGET.set_LUT('images/LUTs/LUTGrayscale.png');
+                    //JEELIZVTOWIDGET.set_LUT('images/LUTs/LUTImprove.jpg');
                 },
                 onError: function (errorLabel) { // this function catches errors, so you can display custom integrated messages
                     alert('An error happened. errorLabel =' + errorLabel)
