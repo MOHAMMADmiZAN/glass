@@ -49,11 +49,7 @@
                 searchImageMask: '/assets/svg/Graphics-Check-big.svg',
                 searchImageColor: '#ffffff',
                 callbackReady: function () {
-
-
-                    // add a LUT to change video rendering:
-                    //JEELIZVTOWIDGET.set_LUT('images/LUTs/LUTGrayscale.png');
-                    //JEELIZVTOWIDGET.set_LUT('images/LUTs/LUTImprove.jpg');
+                    JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')
                 },
                 onError: function (errorLabel) { // this function catches errors, so you can display custom integrated messages
                     alert('An error happened. errorLabel =' + errorLabel)
@@ -131,7 +127,7 @@
       you need to size and position it according to where the VTO widget should be
       if you resize it, the widget will be automatically resized
     -->
-    <div id='JeelizVTOWidget' onload="JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')">
+    <div id='JeelizVTOWidget'>
         <!-- MAIN CANVAS: -->
         <!--
          canvas with id='JeelizVTOWidgetCanvas' is the canvas where the VTO widget will be rendered
@@ -140,25 +136,25 @@
         -->
         <canvas id='JeelizVTOWidgetCanvas'></canvas>
 
-<!--        <div class='JeelizVTOWidgetControls JeelizVTOWidgetControlsTop'>-->
-<!--            &lt;!&ndash; ADJUST BUTTON: &ndash;&gt;-->
-<!--            &lt;!&ndash;          <button id='JeelizVTOWidgetAdjust'>&ndash;&gt;-->
-<!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-arrows-alt"></i></div>Adjust&ndash;&gt;-->
-<!--            &lt;!&ndash;          </button>&ndash;&gt;-->
+        <!--        <div class='JeelizVTOWidgetControls JeelizVTOWidgetControlsTop'>-->
+        <!--            &lt;!&ndash; ADJUST BUTTON: &ndash;&gt;-->
+        <!--            &lt;!&ndash;          <button id='JeelizVTOWidgetAdjust'>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-arrows-alt"></i></div>Adjust&ndash;&gt;-->
+        <!--            &lt;!&ndash;          </button>&ndash;&gt;-->
 
-<!--            &lt;!&ndash; RESIZE WIDGET BUTTON: &ndash;&gt;-->
-<!--            &lt;!&ndash;          <button id='buttonResizeCanvas' onclick='test_resizeCanvas();'>&ndash;&gt;-->
-<!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-sync-alt"></i></div>Resize widget&ndash;&gt;-->
-<!--            &lt;!&ndash;          </button>&ndash;&gt;-->
-<!--        </div>-->
+        <!--            &lt;!&ndash; RESIZE WIDGET BUTTON: &ndash;&gt;-->
+        <!--            &lt;!&ndash;          <button id='buttonResizeCanvas' onclick='test_resizeCanvas();'>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <div class="buttonIcon"><i class="fas fa-sync-alt"></i></div>Resize widget&ndash;&gt;-->
+        <!--            &lt;!&ndash;          </button>&ndash;&gt;-->
+        <!--        </div>-->
 
         <!-- CHANGE MODEL BUTTONS: -->
-<!--        <div class='JeelizVTOWidgetControls' id='JeelizVTOWidgetChangeModelContainer'>-->
-<!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_aviator_or_vertFlash')">Model 1</button>&ndash;&gt;-->
-<!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_round_cuivre_pinkBrownDegrade')">Model 2</button>&ndash;&gt;-->
-<!--&lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')">Model 3</button>&ndash;&gt;-->
-<!--            &lt;!&ndash;          <button onclick="load_modelBySKU()">by SKU</button>&ndash;&gt;-->
-<!--        </div>-->
+        <!--        <div class='JeelizVTOWidgetControls' id='JeelizVTOWidgetChangeModelContainer'>-->
+        <!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_aviator_or_vertFlash')">Model 1</button>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load('rayban_round_cuivre_pinkBrownDegrade')">Model 2</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <button onclick="JEELIZVTOWIDGET.load_modelStandalone('glasses3D/glasses1.json')">Model 3</button>&ndash;&gt;-->
+        <!--            &lt;!&ndash;          <button onclick="load_modelBySKU()">by SKU</button>&ndash;&gt;-->
+        <!--        </div>-->
 
         <!-- BEGIN ADJUST NOTICE -->
         <!--        <div id='JeelizVTOWidgetAdjustNotice'>-->
